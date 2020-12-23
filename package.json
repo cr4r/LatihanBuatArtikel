@@ -1,12 +1,13 @@
 {
-  "name": "cobaExpress",
+  "name": "latihanbuatartikel",
   "version": "1.0.0",
   "description": "Belajar Membuat Website Menggunakan Expressjs yang terkoneksi dengan database Mongoodb",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "node server.js"
+    "start": "node server.js"
   },
-  "keywords": ["belajar",
+  "keywords": [
+    "belajar",
     "Expressjs",
     "Express",
     "Expressjs dan mongodb",
@@ -41,6 +42,6 @@
     "marked": "^1.2.7",
     "method-override": "^3.0.0",
     "mongoose": "^5.11.8",
-    "slugify": "^1.4.6",
+    "slugify": "^1.4.6"
   }
 }
