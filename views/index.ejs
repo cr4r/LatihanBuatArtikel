@@ -1,0 +1,26 @@
+<div class="container">
+    <h1 class="mb-4">Artikel Saya</h1>
+    <a href="/new" class="btn btn-success">Buat Artikel Baru</a>
+
+    <!-- Membuat perulangan sebanyak artikel yang ada di database -->
+    <% artikel.forEach(isi => { %>
+      <div class="card mt-4">
+        <div class="card-body">
+          <!-- Menampilkan Judul Artikel -->
+          <h4 class="card-title"><%= isi.title %></h4>
+          <div class="card-subtitle text-muted mb-2">
+            <!-- Menampilkan Tanggal dibuat -->
+            <%= isi.createdAt.toLocaleDateString() %>
+          </div>
+          <div class="card-text mb-2"><%= isi.isi.substring(0, 150) %></div>
+          <!-- menuju link /judul-Artikel -->
+          <a href="/<%= isi.slug %>" class="btn btn-primary">Baca </a>
+          <a href="/edit/<%= isi.id %>" class="btn btn-info">Edit</a>
+          <form action="/<%= isi.id %>?_method=DELETE" method="POST" class="d-inline">
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+        </div>
+      </div>
+    <!-- Tutup Kurung dari perulangan -->
+    <% }) %>
+</div>

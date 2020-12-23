@@ -1,0 +1,6 @@
+<div class="container">
+    <h1 class="mb-4">Edit Artikel</h1>
+    <form action="/edit/<%= artikel.id %>?_method=PUT" method="POST">
+      <%- include('bahan/form_field') %>
+    </form>
+</div>
