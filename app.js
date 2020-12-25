@@ -17,16 +17,8 @@ mongoose.connect(
 )
 //JSON
 app.use(methodOverride('_method'))
+app.use("/", express.static("public"));
 //mengambil data hasil POST oleh clien
-var optionPublic = {
-    etag:true,maxAge:31536000,
-    redirect: true, setHeaders:function(res, path, set){
-        res.set({
-            'x-timestamp': Date.now(), 'cr4r':'Hai kawan'
-        });
-    }
-}
-app.use("/", express.static("public", optionPublic));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(express.urlencoded({ extended: false }))
@@ -42,14 +34,6 @@ app.use("/", express.static("public"));
 app.get('/', async (req, res) => {
     const artikel = await blog.find().sort({ createdAt: 'desc' })
     res.render('bahan/body', { artikel:artikel, isinya:'index' })
-})
-
-app.post("/ajaxdemo",async (req, res) => {
-    var data = req.body;
-    console.log(data);
-    httpmsgs.sendJSON(req,res, {
-        from: "server"
-    })
 })
 
 app.use('/', artikelRoute)
