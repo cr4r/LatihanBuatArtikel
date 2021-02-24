@@ -38,8 +38,9 @@
     "dompurify": "^2.2.6",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
+    "http-msgs": "^1.0.9",
     "jsdom": "^16.4.0",
-    "marked": "^1.2.7",
+    "marked": "^2.0.0",
     "method-override": "^3.0.0",
     "mongoose": "^5.11.8",
     "slugify": "^1.4.6"

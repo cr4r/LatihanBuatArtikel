@@ -28,8 +28,8 @@ router.post('/', async (req, res, next) => {
 }, saveArticleAndRedirect('new'))
  
 // Mengedit data Artikel yang baru saja diambil dan di edit ke database
-router.put('/:id', async (req, res, next) => {
-  req.artikel = await artikel.findById(req.params.id);next();
+router.put('/edit/:id', async (req, res, next) => {
+  req.artikel = await Blog.findById(req.params.id);next();
 },saveArticleAndRedirect('edit'))
  
 //menghapus Artikel sesuai slug atau bisa disebut judul artikel
